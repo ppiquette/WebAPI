@@ -5,9 +5,9 @@ using WebApi.Models;
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
-    public class FeedController : Controller
+    public class FeedsController : Controller
     {
-        public FeedController(IFeedRepository todoItems)
+        public FeedsController(IFeedRepository todoItems)
         {
             FeedItems = todoItems;
         }
@@ -20,7 +20,7 @@ namespace WebApi.Controllers
             return FeedItems.GetAll();
         }
 
-        [HttpGet("{id}", Name = "GetTodo")]
+        [HttpGet("{id}", Name = "GetFeeds")]
         public IActionResult GetById(string id)
         {
             var item = FeedItems.Find(id);
@@ -31,6 +31,7 @@ namespace WebApi.Controllers
             return new ObjectResult(item);
         }
 
+        /*
         [HttpPost]
         public IActionResult Create([FromBody] FeedItem item)
         {
@@ -39,7 +40,9 @@ namespace WebApi.Controllers
                 return BadRequest();
             }
             FeedItems.Add(item);
-            return CreatedAtRoute("GetTodo", new { id = item.Key }, item);
+            return CreatedAtRoute("GetFeeds", new { id = item.Id }, item);
         }
+        */
+
     }
 }

@@ -6,42 +6,43 @@ namespace WebApi.Models
 {
     public class FeedRepository : IFeedRepository
     {
-        private static ConcurrentDictionary<string, FeedItem> _todos =
+        private static ConcurrentDictionary<string, FeedItem> _feeds =
               new ConcurrentDictionary<string, FeedItem>();
 
         public FeedRepository()
         {
-            Add(new FeedItem { Name = "Item1" });
+            Add(new FeedItem { Name = "Temperature", Id = "615913" });
+            Add(new FeedItem { Name = "Humidity", Id = "616438" });
         }
 
         public IEnumerable<FeedItem> GetAll()
         {
-            return _todos.Values;
+            return _feeds.Values;
         }
 
         public void Add(FeedItem item)
         {
-            item.Key = Guid.NewGuid().ToString();
-            _todos[item.Key] = item;
+            //item.Id = Guid.NewGuid().ToString();
+            _feeds[item.Id] = item;
         }
 
-        public FeedItem Find(string key)
+        public FeedItem Find(string id)
         {
             FeedItem item;
-            _todos.TryGetValue(key, out item);
+            _feeds.TryGetValue(id, out item);
             return item;
         }
 
-        public FeedItem Remove(string key)
+        public FeedItem Remove(string id)
         {
             FeedItem item;
-            _todos.TryRemove(key, out item);
+            _feeds.TryRemove(id, out item);
             return item;
         }
 
         public void Update(FeedItem item)
         {
-            _todos[item.Key] = item;
+            _feeds[item.Id] = item;
         }
     }
 }

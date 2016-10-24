@@ -167,8 +167,8 @@
 -resource:"R:\GitHub\WebApi\src\WebApi\obj\Debug\netcoreapp1.0\WebApidotnet-compile.deps.json",WebApi.deps.json
 "R:\GitHub\WebApi\src\WebApi\Program.cs"
 "R:\GitHub\WebApi\src\WebApi\Startup.cs"
-"R:\GitHub\WebApi\src\WebApi\Controllers\FeedController.cs"
-"R:\GitHub\WebApi\src\WebApi\Controllers\ValuesController.cs"
+"R:\GitHub\WebApi\src\WebApi\Controllers\FeedsController.cs"
+"R:\GitHub\WebApi\src\WebApi\Controllers\InfoController.cs"
 "R:\GitHub\WebApi\src\WebApi\Models\FeedItem.cs"
 "R:\GitHub\WebApi\src\WebApi\Models\FeedRepository.cs"
 "R:\GitHub\WebApi\src\WebApi\Models\IFeedRepository.cs"
